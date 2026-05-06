@@ -1,0 +1,38 @@
+.hero{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+
+}
+.hero h1{
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+.HongDang{
+    color: orange;
+}
+.hero p{
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: var(--color-light);
+}
+
+.cta-button{
+    padding: 12px 30px;
+    background: white;
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.cta-button:hover{
+    background: white;
+    transform:scale(1.1);
+    box-shadow:0 4px 15px rgba(0, 0, 0, 0.2);
+}
