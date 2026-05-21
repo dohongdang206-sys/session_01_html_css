@@ -1,6 +1,7 @@
 .skills-section{
     padding: 80px 20px;
     background:#f9fafb;
+    margin: auto;
 }
 .skills-section h2{
     text-align: center;
@@ -23,6 +24,7 @@
     border-radius: 5px;
     overflow: hidden;
     margin-top: 8px;
+    
 }
 .skill-progress {
     height: 100%;
