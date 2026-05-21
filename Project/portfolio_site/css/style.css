@@ -1,0 +1,190 @@
+ img {
+            display: block;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1200px, 90%);
+            margin: auto;
+        }
+
+        /* =========================
+           PORTFOLIO SECTION
+        ========================== */
+        .portfolio-section {
+            padding: 80px 0;
+        }
+
+        .portfolio-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-dark);
+        }
+
+        /* =========================
+           FILTER BUTTONS
+        ========================== */
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        /* =========================
+           PORTFOLIO GRID
+        ========================== */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 14px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* =========================
+           OVERLAY
+        ========================== */
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(
+                to top,
+                rgba(15, 23, 42, 0.95) 0%,
+                rgba(15, 23, 42, 0.6) 50%,
+                transparent 100%
+            );
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            padding: 1.5rem;
+
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
+            color: white;
+            margin-bottom: 0.4rem;
+            font-size: 1.3rem;
+        }
+
+        .portfolio-overlay p {
+            color: #e2e8f0;
+        }
+
+        /* =========================
+           LIGHTBOX
+        ========================== */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.95);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition: all 0.3s ease;
+
+            z-index: 2000;
+        }
+
+        .lightbox:target {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox img {
+            width: min(90%, 900px);
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+
+            font-size: 3rem;
+            color: white;
+
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        /* Tablet */
+        @media (max-width: 992px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-section h2 {
+                font-size: 2rem;
+            }
+        }
